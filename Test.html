@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <title>test tembak</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+    <style type="text/css" media="all">
+      .container{
+        width: 250px;
+        height: 250px;
+       margin: 15%;
+       
+      }
+      #terima{
+        position: fixed;
+        left:100px;
+        z-index: 2;
+        margin-right: px;
+      }
+      .button{
+        height: 50px;
+        width: 50px;
+      }
+      .tolak{
+        position: relative;
+        right: -50px;
+        z-index: 20;
+      }
+ body {
+  background: #333;
+  color: #fff;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 2em;
+  margin-top: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.heart {
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  top: 10px;
+}
+
+/*.heart {*/
+/*  background-color: red;*/
+/*  display: inline-block;*/
+/*  height: 30px;*/
+/*  margin: 0 10px;*/
+/*  position: relative;*/
+/*  top: 0;*/
+/*  transform: rotate(-45deg);*/
+/*  width: 30px;*/
+/*}*/
+/*.heart:before,*/
+/*.heart:after {*/
+/*  content: "";*/
+/*  background-color: red;*/
+/*  border-radius: 50%;*/
+/*  height: 30px;*/
+/*  position: absolute;*/
+/*  width: 30px;*/
+/*}*/
+
+/*.heart:before {*/
+/*  top: -15px;*/
+/*  left: 0;*/
+/*}*/
+
+/*.heart:after {*/
+/*  left: 15px;*/
+/*  top: 0;*/
+/*}*/
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="">Maaf in aku</h2>
+      <button class="button terima" id = "terima" style="background-color: green">ya</button>
+      <button class= "button tolak" id="tolak" style="background-color: salmon" >gak</button>
+   
+    
+    </div>
+   
+    <div class="send" style="margin-top:30px">
+    
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/"></script>
+    
+    
+    <script type="text/javascript" charset="utf-8">
+      let select = dom => { 
+        return document.querySelector(dom)
+      };
+      let terima = select(".terima");
+      terima.addEventListener("click",
+      () => {
+       let confirms = confirm ("are you sure ?")
+        if(confirms){
+       document.querySelector(".send")
+       .innerHTML =` <h2 class="">i <span class="heart"></span>you</h2>`
+        }
+      });
+      
+      select(".tolak").addEventListener("click",
+      () =>{
+        let rand = []
+      for(var i = 1 ; i<= 4 ; ++i){
+        rand[i] = Math.floor(Math.random()*20);
+      }
+         let attr = select(".tolak");
+        attr.style.margin = `${rand[1]}em`,`${rand[2]}em`,`${rand[3]}em`,`${rand[4]}em`;
+        console.log(rand);
+      });
+     // console.log(button)
+      
+     // button.addEventListener("click",responds() );
+    
+    </script>
+  </body>
+</html>
